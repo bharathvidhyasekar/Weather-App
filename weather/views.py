@@ -1,5 +1,6 @@
 import logging
 from django.shortcuts import render, redirect
+from django.http import HttpResponse
 import requests
 from .models import City
 from .forms import CityForm
@@ -81,3 +82,5 @@ def delete_city(request, city_name):
     except City.DoesNotExist:
         pass
     return redirect('home')
+def dummy(request):
+    return HttpResponse()
